@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 220 14.3% 95.9%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+    --radius: 0.75rem;
+
+    /* Authentic Polikrat colors for better usability */
+    --polikrat-primary: 214 84% 56%;
+    --polikrat-primary-foreground: 0 0% 98%;
+    --pro-green: 142 69% 58%;
+    --pro-green-muted: 142 69% 95%;
+    --con-red: 0 72% 51%;
+    --con-red-muted: 0 72% 95%;
+    --neutral-gray: 220 9% 46%;
+    --neutral-gray-light: 220 13% 91%;
+    --premium-gold: 43 96% 56%;
+    --premium-gold-muted: 43 96% 95%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations */
+@keyframes opinion-shift {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(5px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes market-swing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.opinion-shift {
+  animation: opinion-shift 0.6s ease-out;
+}
+
+.market-swing {
+  animation: market-swing 0.4s ease-in-out;
+}
+
+/* Updated gradient classes with authentic colors */
+.gradient-pro {
+  background: linear-gradient(135deg, hsl(var(--pro-green)) 0%, hsl(var(--pro-green) / 0.9) 100%);
+}
+
+.gradient-con {
+  background: linear-gradient(135deg, hsl(var(--con-red)) 0%, hsl(var(--con-red) / 0.9) 100%);
+}
+
+.gradient-premium {
+  background: linear-gradient(135deg, hsl(var(--premium-gold)) 0%, hsl(var(--premium-gold) / 0.9) 100%);
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--polikrat-primary)) 0%, hsl(var(--polikrat-primary) / 0.9) 100%);
+}
+
+/* Authentic color utilities */
+.text-pro {
+  color: hsl(var(--pro-green));
+}
+.text-con {
+  color: hsl(var(--con-red));
+}
+.text-premium {
+  color: hsl(var(--premium-gold));
+}
+.text-primary-brand {
+  color: hsl(var(--polikrat-primary));
+}
+
+.bg-pro-muted {
+  background-color: hsl(var(--pro-green-muted));
+}
+.bg-con-muted {
+  background-color: hsl(var(--con-red-muted));
+}
+.bg-premium-muted {
+  background-color: hsl(var(--premium-gold-muted));
+}
+
+.border-pro {
+  border-color: hsl(var(--pro-green));
+}
+.border-con {
+  border-color: hsl(var(--con-red));
+}
+.border-premium {
+  border-color: hsl(var(--premium-gold));
+}
